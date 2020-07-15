@@ -65,6 +65,32 @@ class Hidden {
                     "confirmShutdown"
             );
 
+            builder.allowBlockingCallsInside(
+                    "io.netty.handler.ssl.SslHandler",
+                    "handshake"
+            );
+
+            builder.allowBlockingCallsInside(
+                    "io.netty.handler.ssl.SslHandler",
+                    "runAllDelegatedTasks"
+            );
+
+            builder.allowBlockingCallsInside(
+                    "io.netty.util.concurrent.GlobalEventExecutor",
+                    "takeTask");
+
+            builder.allowBlockingCallsInside(
+                    "io.netty.util.concurrent.GlobalEventExecutor",
+                    "addTask");
+
+            builder.allowBlockingCallsInside(
+                    "io.netty.util.concurrent.SingleThreadEventExecutor",
+                    "takeTask");
+
+            builder.allowBlockingCallsInside(
+                    "io.netty.handler.ssl.ReferenceCountedOpenSslClientContext$ExtendedTrustManagerVerifyCallback",
+                    "verify");
+
             builder.nonBlockingThreadPredicate(new Function<Predicate<Thread>, Predicate<Thread>>() {
                 @Override
                 public Predicate<Thread> apply(final Predicate<Thread> p) {
