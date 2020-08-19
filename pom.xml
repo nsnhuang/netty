@@ -97,7 +97,7 @@
         <testJvm />
       </properties>
     </profile>
-    <!-- JDK14 -->
+    <!-- JDK15 -->
     <profile>
       <id>java15</id>
       <activation>
@@ -118,6 +118,7 @@
         <skipOsgiTestsuite>true</skipOsgiTestsuite>
       </properties>
     </profile>
+    <!-- JDK14 -->
     <profile>
       <id>java14</id>
       <activation>
@@ -355,7 +356,7 @@
     <!-- keep in sync with PlatformDependent#ALLOWED_LINUX_OS_CLASSIFIERS -->
     <os.detection.classifierWithLikes>fedora,suse,arch</os.detection.classifierWithLikes>
     <tcnative.artifactId>netty-tcnative</tcnative.artifactId>
-    <tcnative.version>2.0.31.Final</tcnative.version>
+    <tcnative.version>2.0.33.Final</tcnative.version>
     <tcnative.classifier>${os.detected.classifier}</tcnative.classifier>
     <conscrypt.groupId>org.conscrypt</conscrypt.groupId>
     <conscrypt.artifactId>conscrypt-openjdk-uber</conscrypt.artifactId>
@@ -556,7 +557,7 @@
       <dependency>
         <groupId>org.jctools</groupId>
         <artifactId>jctools-core</artifactId>
-        <version>3.0.0</version>
+        <version>3.1.0</version>
       </dependency>
 
       <dependency>
